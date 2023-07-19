@@ -14,7 +14,6 @@ class Product extends Model
 
     public array $translatable = ['name', 'description'];
 
-
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -23,5 +22,10 @@ class Product extends Model
     public function stocks()
     {
         return $this->hasMany(Stock::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }
